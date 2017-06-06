@@ -299,7 +299,7 @@
 
 
 
-    describe('6. Integer Range', function() {
+    xdescribe('6. Integer Range', function() {
       var originalRange;
 
       before(function() {
@@ -399,7 +399,7 @@
       });
 
 
-      it('should accept negative integer for exponent', function() {
+      xit('should accept negative integer for exponent', function() {
         expect(exponent(4,-2)).to.equal(0.0625);
         expect(exponent(5,-4)).to.equal(0.0016);
         expect(exponent(2,-5)).to.equal(0.03125);
@@ -598,7 +598,7 @@
 
 
 
-    describe('11. Modulo', function() {
+    xdescribe('11. Modulo', function() {
       var originalModulo;
 
       before(function() {
