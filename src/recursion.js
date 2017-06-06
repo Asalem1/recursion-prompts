@@ -120,13 +120,19 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
 var multiply = function(x, y) {
-  if (x === 0 || y === 0) return 0;
-  return y === 1 ? x : x + multiply(x, y-1);
+  if (x == 0 || y == 0) return 0;
+  else if ( y < 0 ) return - x + multiply(x, y + 1);
+  else return x + multiply(x, y - 1);
 };
 
 // 13. Write a function that divides two numbers without using the / operator or
 // Math methods.
 var divide = function(x, y) {
+  if (y === 0) return NaN;
+  if (x === 0) return 1;
+  if (x - y === 0) return 1;
+  // TODO negatives
+  return x < y ? 0 : 1 + divide((x - y), y);
 };
 
 // 14. Find the greatest common divisor (gcd) of two positive numbers. The GCD of two
@@ -135,6 +141,8 @@ var divide = function(x, y) {
 // http://www.cse.wustl.edu/~kjg/cse131/Notes/Recursion/recursion.html
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 var gcd = function(x, y) {
+  if (x <= 0 || y <= 0) return null;
+  return y % x === 0 ? x : gcd(x-1, y);
 };
 
 // 15. Write a function that compares each character of two strings and returns true if
@@ -142,15 +150,27 @@ var gcd = function(x, y) {
 // compareStr('house', 'houses') // false
 // compareStr('tomato', 'tomato') // true
 var compareStr = function(str1, str2) {
+  if (str1.length !== str2.length) return false;
+  if (str1.charAt(0) !== str2.charAt(0)) return false;
+  let first = str1.slice(1, str1.length);
+  let second = str2.slice(1, str2.length);
+  return str1.length === 0 ? true : compareStr(first, second);
+
 };
 
 // 16. Write a function that accepts a string and creates an array where each letter
 // occupies an index of the array.
 var createArray = function(str) {
+  let arr = [];
+  if (str.length === 0) return arr;
+  arr = arr.push(str.charAt(0));
+  let string = str.slice(1, str.length);
+   return createArray(string);
 };
 
 // 17. Reverse the order of an array
 var reverseArr = function(array) {
+  // return array.length === 0 ? [] : reverseArr(array[0]) + string.charAt(0);
 };
 
 // 18. Create a new array with a given value and length.
