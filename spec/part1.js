@@ -299,7 +299,7 @@
 
 
 
-    xdescribe('6. Integer Range', function() {
+    describe('6. Integer Range', function() {
       var originalRange;
 
       before(function() {

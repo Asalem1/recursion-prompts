@@ -58,10 +58,8 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
-  // let arr = [];
-  // if (x + 1 === y) return;
-  // arr.push(x+1);
-  // return (x + 1 === y) ? arr: range(x++, y);
+  if (x === y || x+1 === y || x-1 === y) return [];
+  return x < y ? [x+1].concat(range(x + 1, y)) : [x-1].concat(range(x-1, y));
 };
 
 // 7. Compute the exponent of a number.
@@ -177,6 +175,9 @@ var reverseArr = function(array) {
 // buildList(0,5) // [0,0,0,0,0]
 // buildList(7,3) // [7,7,7]
 var buildList = function(value, length) {
+  // let arr = [];
+  // arr[length] = value;
+  // return length === 0 ? arr : arr.concat(buildList(value, length-1));
 };
 
 // 19. Implement FizzBuzz. Given integer n, return an array of the string representations of 1 to n.
