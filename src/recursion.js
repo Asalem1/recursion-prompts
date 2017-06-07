@@ -25,18 +25,12 @@ var arraySum = function(array) {
   if (array.length === 0) return 0;
   return copy.reduce((a,b) => {
     if (Array.isArray(b)) {
-      return arraySum(b);
+      console.log('here is b: ', b);
+      return a + arraySum(b);
     } else {
       return a + b;
     }
   }, 0);
-  // for (let i = 0; i < copy.length; i++) {
-  //   if (Array.isArray(copy[i])) {
-  //     return arraySum(copy[i]);
-  //   }
-  // }
-  // return (copy.length === 0) ? 0 : +copy.splice(0, 1) + arraySum(copy)
-  return (Array.isArray(copy[0])) ? arraySum(copy[0]) : +copy.splice(0, 1) + arraySum(copy)
 };
 
 // 4. Check if a number is even.
