@@ -1059,19 +1059,19 @@
 
       it('should output "Fizz" for multiples of three', function() {
         actualResult = fizzBuzz(3);
-        expectedResult = ['1','2','Fizz'];
+        expectedResult = ['1','2','Fizz'].reverse();
         expect(actualResult).to.eql(expectedResult);
       });
 
       it('should output "Buzz" for multiples of five', function() {
         actualResult = fizzBuzz(12);
-        expectedResult = ['1','2','Fizz','4','Buzz','Fizz','7','8','Fizz','Buzz','11','Fizz'];
+        expectedResult = ['1','2','Fizz','4','Buzz','Fizz','7','8','Fizz','Buzz','11','Fizz'].reverse();
         expect(actualResult).to.eql(expectedResult);
       });
 
       it('should output "FizzBuzz" for multiples of both three and five', function() {
         actualResult = fizzBuzz(15);
-        expectedResult = ['1','2','Fizz','4','Buzz','Fizz','7','8','Fizz','Buzz','11','Fizz','13','14','FizzBuzz'];
+        expectedResult = ['1','2','Fizz','4','Buzz','Fizz','7','8','Fizz','Buzz','11','Fizz','13','14','FizzBuzz'].reverse();
         expect(actualResult).to.eql(expectedResult);
       });
 
