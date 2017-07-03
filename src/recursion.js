@@ -162,8 +162,8 @@ var createArray = function(str) {
 var reverseArr = function(array) {
   let arr = [];
   if (array.length === 0) return arr
-  arr.unshift(array[0]);
-  let newArray = array.splice(1);
+  arr.unshift(array[array.length-1]);
+  let newArray = array.slice(0, array.length-1);
   return arr.concat(reverseArr(newArray));
 };
 
