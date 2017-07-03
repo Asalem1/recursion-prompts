@@ -161,9 +161,10 @@ var createArray = function(str) {
 // 17. Reverse the order of an array
 var reverseArr = function(array) {
   let arr = [];
+  if (array.length === 0) return arr
   arr.unshift(array[0]);
   let newArray = array.splice(1);
-  return array.length === 0 ? arr : arr.concat(reverseArr(newArray));
+  return arr.concat(reverseArr(newArray));
 };
 
 // 18. Create a new array with a given value and length.
