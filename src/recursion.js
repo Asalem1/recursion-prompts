@@ -25,7 +25,6 @@ var arraySum = function(array) {
   if (array.length === 0) return 0;
   return copy.reduce((a,b) => {
     if (Array.isArray(b)) {
-      console.log('here is b: ', b);
       return a + arraySum(b);
     } else {
       return a + b;
@@ -154,15 +153,17 @@ var compareStr = function(str1, str2) {
 // occupies an index of the array.
 var createArray = function(str) {
   let arr = [];
-  if (str.length === 0) return arr;
-  arr = arr.push(str.charAt(0));
+  arr.push(str.charAt(0));
   let string = str.slice(1, str.length);
-   return createArray(string);
+  return str.length === 1 ? arr : arr.concat(createArray(string));
 };
 
 // 17. Reverse the order of an array
 var reverseArr = function(array) {
-  // return array.length === 0 ? [] : reverseArr(array[0]) + string.charAt(0);
+  let arr = [];
+  arr.unshift(array[0]);
+  let newArray = array.splice(1);
+  return array.length === 0 ? arr : arr.concat(reverseArr(newArray));
 };
 
 // 18. Create a new array with a given value and length.
