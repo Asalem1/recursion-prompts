@@ -66,9 +66,6 @@ var exponent = function(base, exp) {
 };
 
 // 8. Determine if a number is a power of two.
-// powerOfTwo(1); // true
-// powerOfTwo(16); // true
-// powerOfTwo(10); // false
 var powerOfTwo = function(n) {
   if (n === 1) return true;
   return n/2 > 0 ? powerOfTwo(n/2) : false
@@ -92,9 +89,6 @@ var palindrome = function(string) {
 
 // 11. Write a function that returns the remainder of x divided by y without using the
 // modulo (%) operator.
-// modulo(5,2) // 1
-// modulo(17,5) // 2
-// modulo(22,6) // 4
 var modulo = function(x, y) {
   if (y === 0) {
     return NaN;

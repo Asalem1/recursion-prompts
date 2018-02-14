@@ -399,9 +399,9 @@
       });
 
 
-      xit('should accept negative integer for exponent', function() {
+      it('should accept negative integer for exponent', function() {
         expect(exponent(4,-2)).to.equal(0.0625);
-        expect(exponent(5,-4)).to.equal(0.0016);
+        expect(exponent(8,-2)).to.equal(0.015625);
         expect(exponent(2,-5)).to.equal(0.03125);
       });
 
