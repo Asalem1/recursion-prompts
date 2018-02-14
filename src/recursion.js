@@ -142,6 +142,8 @@ var divide = function(x, y) {
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 var gcd = function(x, y) {
   if (x <= 0 || y <= 0) return null;
+  if (y === x) return 1;
+  // TODO
   return y % x === 0 ? x : gcd(x-1, y);
 };
 
@@ -205,6 +207,13 @@ var fizzBuzz = function(n) {
 // countOccurrence([2,7,4,4,1,4], 4) // 3
 // countOccurrence([2,'banana',4,4,1,'banana'], 'banana') // 2
 var countOccurrence = function(array, value) {
+  if (array.length === 0) return 0;
+  if (array[0] === value) {
+    array.shift();
+    return 1 + countOccurrence(array, value);
+  };
+  array.shift();
+  return countOccurrence(array, value);
 };
 
 // 21. Write a recursive version of map.
