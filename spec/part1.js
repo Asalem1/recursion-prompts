@@ -598,7 +598,7 @@
 
 
 
-    xdescribe('11. Modulo', function() {
+    describe('11. Modulo', function() {
       var originalModulo;
 
       before(function() {

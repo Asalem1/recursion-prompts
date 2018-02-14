@@ -96,16 +96,27 @@ var palindrome = function(string) {
 // modulo(17,5) // 2
 // modulo(22,6) // 4
 var modulo = function(x, y) {
-  // if (Math.abs(x) < Math.abs(y)) return x;
-  // else {
-  //   if (x < 0) {
-  //     x = x+y
-  //     return modulo(x, y);
-  //   } else {
-  //     x = x-y;
-  //     return modulo(x, y);
-  //   }
-  // }
+  if (y === 0) {
+    return NaN;
+  }
+  if (y === 1 || x === 0) {
+    return 0;
+  }
+  const checkNeg = (z) => -z > 0 ? -z : z;
+  if (checkNeg(x) < checkNeg(y)) {
+    return x;
+  } else {
+    if (x < 0 && y < 0) {
+      return -modulo(checkNeg(x), checkNeg(y));
+    }
+    if (x < 0) {
+      x = x + y;
+      return modulo(x, y);
+    } else {
+      x = x - y;
+      return modulo(x, y);
+    }
+  }
 };
 
 // 12. Write a function that multiplies two numbers without using the * operator or
