@@ -124,10 +124,14 @@ var multiply = function(x, y) {
 // 13. Write a function that divides two numbers without using the / operator or
 // Math methods.
 var divide = function(x, y) {
+  if (x < 0 && y < 0) {
+    x = -x
+    y = -y;
+  }
   if (y === 0) return NaN;
-  if (x === 0) return 1;
-  if (x - y === 0) return 1;
-  // TODO negatives
+  if (x === 0) return 0;
+  if (y === 1) return x;
+  if ((x - y === 0) || x === y) return 1;
   return x < y ? 0 : 1 + divide((x - y), y);
 };
 
