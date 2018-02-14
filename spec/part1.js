@@ -1171,7 +1171,7 @@
       });
 
       it('should return new array without mutating the input array', function() {
-        result = rMap(input, num => num);
+        result = rMap([1,2,3,4,5], num => num);
         expect(input).to.eql([1,2,3,4,5]);
         // should deeply equal input
         expect(result).to.eql(input);
